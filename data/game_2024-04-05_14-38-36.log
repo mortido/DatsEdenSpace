@@ -1,9 +1,0 @@
-arguments: ./build/mortido-bot
-Current dir: /app
-File verbosity level: 0
-date       time         ( uptime  ) [ thread name/id ]                   file:line     v| 
-2024-04-05 14:38:36.814 (   2.071s) [main thread     ]             loguru.cpp:841   INFO| Logging to 'data/game_2024-04-05_14-38-36.log', mode: 'w', verbosity: 0
-2024-04-05 14:38:36.816 (   2.072s) [main thread     ]                 game.h:22    INFO| { play
-2024-04-05 14:38:36.817 (   2.074s) [main thread     ]                 game.h:23    INFO| .   Game 2024-04-05_14-38-36 started
-2024-04-05 14:38:36.819 (   2.076s) [main thread     ]                 game.h:27    INFO| .   Game 2024-04-05_14-38-36 finished
-2024-04-05 14:38:36.820 (   2.077s) [main thread     ]                 game.h:22    INFO| } 0.004 s: play
