@@ -5,9 +5,12 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     cmake
 
-#RUN apt-get install -y \
-#    libcurl4-openssl-dev \
-#    curl
+RUN apt-get install -y libcurlpp-dev
+RUN apt-get install -y pkg-config
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/Moscow
+RUN apt-get install -y tzdata
 
 # Set the working directory
 WORKDIR /app
@@ -23,4 +26,4 @@ RUN cmake -Bbuild -H. && \
     cmake --build build -- -j$(nproc)
 
 # Run the executable
-CMD ["./build/dats_eden_space"]
+CMD ["./build/mortido-bot"]
