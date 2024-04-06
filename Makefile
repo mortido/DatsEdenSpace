@@ -9,4 +9,6 @@ build:
 run:
 	docker run --rm -v $(DATA_DIR):/app/data $(DOCKER_IMAGE_NAME)
 
+stop:
+	docker ps --filter ancestor=$(DOCKER_IMAGE_NAME) --format '{{.ID}}' | xargs -r docker stop
 .PHONY: build run

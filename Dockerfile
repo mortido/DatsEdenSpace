@@ -22,8 +22,9 @@ COPY . .
 RUN mkdir build
 
 # Build the project with CMake
-RUN cmake -Bbuild -H. && \
+RUN cmake -B build -H.  && \
     cmake --build build -- -j$(nproc)
+
 
 # Run the executable
 CMD ["./build/mortido-bot"]
