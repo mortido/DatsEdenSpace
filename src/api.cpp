@@ -111,12 +111,11 @@ std::optional<std::string> Api::perform_request(const std::string &url,
         request.setOpt<curlpp::options::PostFields>(body);
         request.setOpt<curlpp::options::PostFieldSize>(body.length());
       } else if (method == "DELETE" && !body.empty()) {
-        // Assuming the library allows setting a body for DELETE requests
-        // This is just a placeholder as curlpp might need different options
-        // depending on its version or how DELETE with body is implemented in your context
         request.setOpt<curlpp::options::CustomRequest>("DELETE");
-        request.setOpt<curlpp::options::PostFields>(body);
-        request.setOpt<curlpp::options::PostFieldSize>(body.length());
+        if (!body.empty()) {
+          request.setOpt<curlpp::options::PostFields>(body);
+          request.setOpt<curlpp::options::PostFieldSize>(body.length());
+        }
       }
       request.perform();
       auto result = response_stream.str();
